@@ -1,0 +1,589 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Sree Vidya Cheekuri - Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600;700&display=swap" rel="stylesheet" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet" />
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/webfonts/fa-solid-900.woff2"
+        as="font" type="font/woff2" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+        xintegrity="sha512-MDplrNvU14pE8fzrxA59Aqzfs0h09UOBLLgq3T6EMvI3s+JX2q8UpV8ooyDFZDN9HHIEPCZV+k0rxZgdRLHM3w=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" />
+    <style>
+        :root {
+            /* Light Mode Colors */
+            --bg-color: #f5f7fa;
+            --text-color: #333;
+            --accent-color: #4a90e2;
+            --card-bg: #ffffff;
+            --shadow-light: rgba(0, 0, 0, 0.08);
+            --highlight-bg: #e3ecf9;
+            --link-color: #4a90e2;
+            --link-hover: #357abd;
+            --skill-bg: #d9e7ff;
+            --skill-color: #2c3e50;
+            --timeline-span-color: #555;
+        }
+
+        body.dark-mode {
+            --bg-color: #111827;
+            --text-color: #E5E7EB;
+            --accent-color: #38bdf8;
+            --card-bg: #1f2937;
+            --shadow-light: rgba(0, 0, 0, 0.4);
+            --highlight-bg: #263445;
+            --link-color: #38bdf8;
+            --link-hover: #0ea5e9;
+            --skill-bg: #1f2937;
+            --skill-color: #E5E7EB;
+            --timeline-span-color: #9ca3af;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: var(--bg-color);
+            color: var(--text-color);
+            scroll-behavior: smooth;
+            min-height: 100vh;
+            line-height: 1.6;
+        }
+
+        header {
+            padding: 3rem 1rem 2rem;
+            text-align: center;
+            background: var(--card-bg);
+            box-shadow: 0 4px 10px var(--shadow-light);
+            position: relative;
+            z-index: 10;
+            overflow: hidden;
+        }
+        
+        #particles-js {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+            top: 0;
+            left: 0;
+            pointer-events: none;
+        }
+
+        header > * {
+            position: relative;
+            z-index: 1;
+        }
+
+        header h1 {
+            font-size: 2.8rem;
+            color: var(--accent-color);
+            font-weight: 700;
+            margin-bottom: 0.3rem;
+        }
+
+        .tagline {
+            transition: opacity 0.4s ease;
+            opacity: 1;
+            font-weight: 500;
+            font-size: 1.2rem;
+            color: var(--text-color);
+            height: 28px;
+            margin-bottom: 1rem;
+        }
+
+        .tagline.fade {
+            opacity: 0;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: var(--text-color);
+            font-weight: 600;
+            font-size: 1rem;
+            padding: 0.4rem 0.6rem;
+            border-radius: 6px;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        nav ul li a.active,
+        nav ul li a:hover {
+            background-color: var(--accent-color);
+            color: white;
+        }
+
+        .theme-toggle {
+            position: absolute;
+            top: 1.25rem;
+            right: 1.25rem;
+            font-size: 1.5rem;
+            color: var(--accent-color);
+            cursor: pointer;
+            transition: color 0.3s;
+            user-select: none;
+        }
+
+        .theme-toggle:hover {
+            color: var(--link-hover);
+        }
+
+        section {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: all 0.7s ease-in-out;
+            max-width: 900px;
+            margin: 3rem auto;
+            padding: 0 1rem;
+        }
+
+        section.reveal {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        section h2 {
+            font-size: 2.2rem;
+            color: var(--accent-color);
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+
+        #about p {
+            max-width: 650px;
+            margin: 0.5rem auto 1rem;
+            font-size: 1.1rem;
+            color: var(--text-color);
+            text-align: center;
+        }
+
+        .timeline {
+            position: relative;
+            border-left: 3px solid var(--accent-color);
+            padding-left: 3rem;
+            margin-left: 1.5rem;
+        }
+
+        .timeline-item {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: all 0.8s ease-in-out;
+            margin-bottom: 2rem;
+            position: relative;
+            color: var(--text-color);
+
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -60px;
+            top: 0.5rem;
+            width: 16px;
+            height: 16px;
+            background-color: var(--accent-color);
+            border-radius: 50%;
+            box-shadow: 0 0 8px var(--accent-color);
+            border: 3px solid var(--bg-color);
+        }
+
+        .timeline-item.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .timeline-content h3 {
+            font-size: 1.3rem;
+            margin-bottom: 0.3rem;
+            font-weight: 600;
+        }
+
+        .timeline-content span {
+            font-size: 0.9rem;
+            color: var(--timeline-span-color);
+        }
+
+        header .contact-icons a {
+            margin: 0 0.75rem;
+            font-size: 1.5rem;
+            color: var(--accent-color);
+            transition: color 0.3s ease;
+            cursor: pointer;
+        }
+
+        header .contact-icons a:hover {
+            color: var(--link-hover);
+        }
+
+        .project-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.25rem;
+        }
+
+        .card {
+            position: relative;
+            overflow: hidden;
+            background: var(--card-bg);
+            padding: 1.6rem 1.2rem;
+            border-radius: 12px;
+            box-shadow: 0 6px 15px var(--shadow-light);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: pointer;
+            color: var(--text-color);
+            user-select: none;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 30px rgba(56, 189, 248, 0.25);
+        }
+
+        .card h3 {
+            margin-bottom: 0.5rem;
+            color: var(--accent-color);
+            font-weight: 700;
+        }
+
+        .card p {
+            margin-bottom: 1rem;
+            font-size: 1rem;
+            color: var(--text-color);
+        }
+
+        .card a {
+            color: var(--link-color);
+            font-weight: 600;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        .card a:hover {
+            color: var(--link-hover);
+            text-decoration: underline;
+        }
+        
+        .skill-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+            justify-content: center;
+        }
+
+        .skill-buttons span {
+            background: var(--skill-bg);
+            color: var(--skill-color);
+            padding: 0.5rem 1.2rem;
+            border-radius: 9999px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            user-select: none;
+            transition: background-color 0.3s, color 0.3s, transform 0.2s;
+            cursor: default;
+        }
+        
+        .skill-buttons span:hover {
+            transform: translateY(-3px);
+            background: var(--accent-color);
+            color: white;
+        }
+        
+        .contact-section {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+        
+        .resume-button {
+            display: inline-block;
+            padding: 0.75rem 2.25rem;
+            margin: 2rem 0;
+            font-size: 1rem;
+            font-weight: 600;
+            background-color: var(--accent-color);
+            color: white;
+            border-radius: 30px;
+            text-decoration: none;
+            transition: background-color 0.3s ease;
+            box-shadow: 0 3px 8px rgba(56, 189, 248, 0.4);
+        }
+        
+        .resume-button:hover {
+            background-color: var(--link-hover);
+        }
+
+        @media (max-width: 768px) {
+            nav ul {
+                flex-direction: column;
+                gap: 0.7rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div id="particles-js"></div>
+        <h1>Sree Vidya Cheekuri</h1>
+        <p class="tagline typing"></p>
+        
+        <div class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle dark/light theme" role="button"
+            tabindex="0">
+            <i class="fas fa-adjust"></i>
+        </div>
+        
+        <div class="contact-icons" style="margin-top: 1rem;">
+            <a href="mailto:vidyacheekuri.us@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+            <a href="https://www.linkedin.com/in/your-linkedin-profile" target="_blank" rel="noopener noreferrer"
+                aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+            <a href="https://github.com/your-github-profile" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i
+                    class="fab fa-github"></i></a>
+        </div>
+
+        <nav>
+            <ul>
+                <li><a href="#about" class="nav-link active">About</a></li>
+                <li><a href="#education" class="nav-link">Education</a></li>
+                <li><a href="#experience" class="nav-link">Experience</a></li>
+                <li><a href="#projects" class="nav-link">Projects</a></li>
+                <li><a href="#publications" class="nav-link">Publications</a></li>
+                <li><a href="#skills" class="nav-link">Skills</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="about" data-aos="fade-up" tabindex="0">
+            <h2>About Me</h2>
+            <p>A passionate Data Scientist and ML Engineer currently pursuing a Master's degree at the University of Houston. I build robust predictive models and AI-driven solutions, transforming complex data into actionable insights. My experience spans academic research in computer vision and NLP to developing full-stack applications.</p>
+        </section>
+
+        <section id="education" data-aos="fade-up" tabindex="0">
+            <h2>Education</h2>
+            <div class="timeline">
+                <div class="timeline-item" data-aos="fade-up">
+                    <div class="timeline-content">
+                        <h3>University of Houston <span>(Expected May 2026)</span></h3>
+                        <p>Masters in Engineering Data Science – GPA: 4.0/4.0</p>
+                    </div>
+                </div>
+                <div class="timeline-item" data-aos="fade-up">
+                    <div class="timeline-content">
+                        <h3>SRM University <span>(May 2024)</span></h3>
+                        <p>B.Tech in Computer Science – CGPA: 8.72/10.0</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="experience" data-aos="fade-up" tabindex="0">
+            <h2>Experience</h2>
+            <div class="timeline">
+                <div class="timeline-item" data-aos="fade-up">
+                    <div class="timeline-content">
+                        <h3>Machine Learning Research Intern <span>(Nov 2024 – Present)</span></h3>
+                        <p>University of Houston</p>
+                    </div>
+                </div>
+                <div class="timeline-item" data-aos="fade-up">
+                    <div class="timeline-content">
+                        <h3>AI/ML Research Intern <span>(Mar 2023 – Jul 2023)</span></h3>
+                        <p>Deakin University, Australia</p>
+                    </div>
+                </div>
+                <div class="timeline-item" data-aos="fade-up">
+                    <div class="timeline-content">
+                        <h3>Full Stack Web Developer <span>(May 2022 – Jul 2022)</span></h3>
+                        <p>Solar Secure Solutions</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="projects" data-aos="fade-up" tabindex="0">
+            <h2>Projects</h2>
+            <div class="project-cards">
+                <div class="card" tabindex="0">
+                    <h3>6D Pose Estimation for Robotic Grasping</h3>
+                    <p>End-to-end vision system for robotic automation to identify and locate objects in 3D space with high precision for grasping tasks.</p>
+                    <a href="#" target="_blank" rel="noopener noreferrer">GitHub ↗️</a>
+                </div>
+                <div class="card" tabindex="0">
+                    <h3>Video Action Recognition</h3>
+                    <p>A deep learning model combining CNN and LSTM to recognize human actions across 101 categories from real-world video clips, achieving 88% accuracy.</p>
+                    <a href="#" target="_blank" rel="noopener noreferrer">GitHub ↗️</a>
+                </div>
+                <div class="card" tabindex="0">
+                    <h3>Generative Storytelling with AI</h3>
+                    <p>A multimodal AI system that transforms text into animated videos using LLMs and GANs, achieving 95% scene-text alignment.</p>
+                    <a href="#" target="_blank" rel="noopener noreferrer">GitHub ↗️</a>
+                </div>
+                 <div class="card" tabindex="0">
+                    <h3>Assistive Tech for Visually Impaired</h3>
+                    <p>A MATLAB system using LBP & Neural Networks to detect faces and recognize emotions with 93% accuracy, providing real-time voice feedback.</p>
+                    <a href="#" target="_blank" rel="noopener noreferrer">GitHub ↗️</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="publications" data-aos="fade-up" tabindex="0">
+            <h2>Publications</h2>
+            <div class="project-cards">
+                <div class="card" tabindex="0">
+                    <h3>Pneumonia Detection using Machine Learning</h3>
+                    <p>Designed a CNN-based diagnostic system to detect pneumonia from chest X-rays. Published in IEEE 5th INCET 2024 conference.</p>
+                    <a href="https://doi.org/10.1109/INCET61516.2024.10592975" target="_blank" rel="noopener noreferrer">Read on IEEE Xplore ↗️</a>
+                </div>
+            </div>
+        </section>
+
+
+        <section id="skills" data-aos="fade-up" tabindex="0">
+            <h2>Skills</h2>
+            <div class="skill-buttons" aria-label="Skills list">
+                <span>Python</span>
+                <span>SQL</span>
+                <span>R</span>
+                <span>Pandas</span>
+                <span>NumPy</span>
+                <span>Scikit-Learn</span>
+                <span>TensorFlow</span>
+                <span>PyTorch</span>
+                <span>NLP</span>
+                <span>LLMs</span>
+                <span>Computer Vision</span>
+                <span>AWS</span>
+                <span>Docker</span>
+                <span>Git</span>
+                <span>Flask</span>
+                <span>PowerBI</span>
+                <span>Tableau</span>
+                <span>Matplotlib</span>
+            </div>
+        </section>
+        
+        <section id="contact" class="contact-section" data-aos="fade-up" tabindex="0">
+            <h2>Let’s Connect!</h2>
+            <p style="max-width: 720px; margin: 1.5rem auto 0; font-size: 1.05rem; color: var(--text-color); text-align: center; line-height: 1.6;">
+                I'm actively seeking new opportunities and collaborations. Feel free to reach out via email or connect with me on LinkedIn.
+            </p>
+            <a href="Sree - Resume.pdf" download="Sree-Vidya-Cheekuri-Resume.pdf" class="resume-button">Download Resume (.pdf)</a>
+        </section>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/tsparticles@2.11.1/tsparticles.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script>
+        // AOS animation init
+        AOS.init({ duration: 900, once: true });
+
+        // Typing effect
+        const taglineEl = document.querySelector('.tagline');
+        const phrases = ["Data Scientist", "Machine Learning Engineer", "AI Researcher", "Python Developer"];
+        let i = 0, j = 0;
+        let deleting = false;
+        function typeWriter() {
+            taglineEl.classList.remove('fade');
+            const current = phrases[i];
+            if (!deleting) {
+                taglineEl.textContent = current.slice(0, j++);
+                if (j > current.length + 1) {
+                    deleting = true;
+                    setTimeout(() => taglineEl.classList.add('fade'), 800);
+                    setTimeout(typeWriter, 1400);
+                    return;
+                }
+            } else {
+                taglineEl.textContent = current.slice(0, j--);
+                if (j < 0) {
+                    deleting = false;
+                    i = (i + 1) % phrases.length;
+                }
+            }
+            setTimeout(typeWriter, deleting ? 40 : 120);
+        }
+
+        typeWriter();
+
+        // Nav link smooth scroll + active highlight
+        const navLinks = document.querySelectorAll('nav ul li a');
+        navLinks.forEach(link => {
+            link.addEventListener('click', e => {
+                e.preventDefault();
+                navLinks.forEach(l => l.classList.remove('active'));
+                link.classList.add('active');
+                document.querySelector(link.getAttribute('href')).scrollIntoView({ behavior: 'smooth', block: 'start' });
+            });
+        });
+        
+        // Theme toggle + save preference
+        function toggleTheme() {
+            document.body.classList.toggle('dark-mode');
+            localStorage.setItem('theme', document.body.classList.contains('dark-mode') ? 'dark' : 'light');
+        }
+        window.toggleTheme = toggleTheme;
+
+        // Load theme: default to dark if no preference is saved
+        if (localStorage.getItem('theme') !== 'light') {
+            document.body.classList.add('dark-mode');
+        }
+        
+        const timelineItems = document.querySelectorAll('.timeline-item');
+        const timelineObserver = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) entry.target.classList.add('visible');
+            });
+        }, { threshold: 0.4 });
+        timelineItems.forEach(item => timelineObserver.observe(item));
+
+        const sections = document.querySelectorAll('section');
+        const observer = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('reveal');
+                     const id = entry.target.getAttribute('id');
+                     const activeLink = document.querySelector(`nav a[href="#${id}"]`);
+                     if(activeLink){
+                        navLinks.forEach(l => l.classList.remove('active'));
+                        activeLink.classList.add('active');
+                     }
+                }
+            });
+        }, { threshold: 0.2 });
+
+        sections.forEach(section => observer.observe(section));
+
+        tsParticles.load("particles-js", {
+            fullScreen: { enable: false },
+            background: { color: { value: "transparent" } },
+            particles: {
+                number: { value: 60 },
+                color: { value: "#38bdf8" },
+                shape: { type: "circle" },
+                opacity: { value: 0.4 },
+                size: { value: 3 },
+                move: { enable: true, speed: 1 },
+                links: { enable: true, distance: 120, color: "#38bdf8", opacity: 0.2 }
+            }
+        });
+
+    </script>
+</body>
+
+</html>
