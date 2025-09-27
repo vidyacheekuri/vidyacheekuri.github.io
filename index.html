@@ -220,18 +220,6 @@
             color: var(--timeline-span-color);
         }
 
-        header .contact-icons a {
-            margin: 0 0.75rem;
-            font-size: 1.5rem;
-            color: var(--accent-color);
-            transition: color 0.3s ease;
-            cursor: pointer;
-        }
-
-        header .contact-icons a:hover {
-            color: var(--link-hover);
-        }
-
         .project-cards {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -279,6 +267,59 @@
             text-decoration: underline;
         }
         
+        /* FAQs */
+        details {
+            max-width: 700px;
+            margin: 0.8rem auto 1.8rem;
+            padding: 1rem 1.25rem;
+            border-radius: 10px;
+            background: var(--card-bg);
+            box-shadow: 0 6px 18px var(--shadow-light);
+            cursor: pointer;
+            color: var(--text-color);
+            font-size: 1rem;
+            user-select: none;
+            transition: all 0.3s ease;
+        }
+
+        details summary {
+            font-weight: 600;
+            font-size: 1.1rem;
+            outline: none;
+            user-select: none;
+            list-style: none; /* Hide default marker */
+            position: relative;
+            padding-right: 1.5rem; /* Space for custom marker */
+        }
+
+        details summary::-webkit-details-marker {
+            display: none; /* Hide default marker for Chrome/Safari */
+        }
+
+        details summary::after {
+            content: '+';
+            position: absolute;
+            right: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 1.5rem;
+            transition: transform 0.3s;
+        }
+        
+        details[open] summary::after {
+            transform: translateY(-50%) rotate(45deg);
+        }
+
+        details[open] {
+            box-shadow: 0 10px 25px rgba(56, 189, 248, 0.25);
+            background: var(--highlight-bg);
+        }
+
+        details p {
+            margin-top: 0.8rem;
+            line-height: 1.5;
+        }
+
         .skill-buttons {
             display: flex;
             flex-wrap: wrap;
@@ -304,15 +345,46 @@
             color: white;
         }
         
+        /* --- CONTACT SECTION --- */
         .contact-section {
             text-align: center;
             margin-bottom: 4rem;
         }
         
+        .contact-section h2 {
+            margin-bottom: 1rem;
+        }
+
+        .contact-section p {
+             margin-bottom: 2.5rem;
+        }
+        
+        .contact-icons {
+            margin-bottom: 2.5rem;
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+        }
+
+        header .contact-icons {
+            margin-bottom: 1rem; /* Specific margin for header icons */
+        }
+
+        .contact-icons a {
+            font-size: 1.8rem;
+            color: var(--accent-color);
+            text-decoration: none;
+            transition: color 0.3s ease, transform 0.3s ease;
+        }
+
+        .contact-icons a:hover {
+            color: var(--link-hover);
+            transform: translateY(-3px);
+        }
+
         .resume-button {
             display: inline-block;
             padding: 0.75rem 2.25rem;
-            margin: 2rem 0;
             font-size: 1rem;
             font-weight: 600;
             background-color: var(--accent-color);
@@ -346,13 +418,11 @@
             tabindex="0">
             <i class="fas fa-adjust"></i>
         </div>
-        
-        <div class="contact-icons" style="margin-top: 1rem;">
-            <a href="mailto:vidyacheekuri.us@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
-            <a href="https://www.linkedin.com/in/sreevidyacheekuri/" target="_blank" rel="noopener noreferrer"
-                aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
-            <a href="https://github.com/vidyacheekuri" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i
-                    class="fab fa-github"></i></a>
+
+        <div class="contact-icons">
+            <a href="mailto:vidyacheekuri.us@gmail.com" aria-label="Send email"><i class="fas fa-envelope"></i></a>
+            <a href="https://www.linkedin.com/in/sreevidyacheekuri/" target="_blank" rel="noopener noreferrer" aria-label="Visit LinkedIn profile"><i class="fab fa-linkedin-in"></i></a>
+            <a href="https://github.com/vidyacheekuri" target="_blank" rel="noopener noreferrer" aria-label="Visit GitHub profile"><i class="fab fa-github"></i></a>
         </div>
 
         <nav>
@@ -363,6 +433,7 @@
                 <li><a href="#experience" class="nav-link">Experience</a></li>
                 <li><a href="#projects" class="nav-link">Projects</a></li>
                 <li><a href="#publications" class="nav-link">Publications</a></li>
+                <li><a href="#faq" class="nav-link">FAQs</a></li>
                 <li><a href="#contact" class="nav-link">Contact</a></li>
             </ul>
         </nav>
@@ -462,7 +533,7 @@
                 <div class="card" tabindex="0">
                     <h3>6D Pose Estimation for Robotic Grasping</h3>
                     <p>End-to-end vision system for robotic automation to identify and locate objects in 3D space with high precision for grasping tasks.</p>
-                    <a href="https://github.com/vidyacheekuri/Robotic_Item_Picking" target="_blank" rel="noopener noreferrer">GitHub ↗️</a>
+                    <a href="https://github.com/sreevidyacheekuri/Robotic_Item_Picking" target="_blank" rel="noopener noreferrer">GitHub ↗️</a>
                 </div>
                 <div class="card" tabindex="0">
                     <h3>Video Action Recognition</h3>
@@ -472,7 +543,7 @@
                 <div class="card" tabindex="0">
                     <h3>Generative Storytelling with AI</h3>
                     <p>A multimodal AI system that transforms text into animated videos using LLMs and GANs, achieving 95% scene-text alignment.</p>
-                    <a href="https://github.com/vidyacheekuri/text-to-video-generator" target="_blank" rel="noopener noreferrer">GitHub ↗️</a>
+                    <a href="https://github.com/sreevidyacheekuri/text-to-video-generator" target="_blank" rel="noopener noreferrer">GitHub ↗️</a>
                 </div>
                  <div class="card" tabindex="0">
                     <h3>Assistive Tech for Visually Impaired</h3>
@@ -493,23 +564,36 @@
             </div>
         </section>
         
+        <section id="faq" data-aos="fade-up" tabindex="0">
+            <h2>FAQs</h2>
+            <details>
+                <summary>What kind of roles are you looking for?</summary>
+                <p>I am actively seeking Data Scientist or Machine Learning Engineer roles where I can leverage my skills in predictive modeling, computer vision, and NLP to contribute to innovative, data-driven products.</p>
+            </details>
+            <details>
+                <summary>What sets you apart from other candidates?</summary>
+                <p>My ability to bridge the gap between academic research and practical application. I not only understand the theory behind complex models but have also engineered and deployed them in projects ranging from robotics to real-time forecasting.</p>
+            </details>
+            <details>
+                <summary>What are you passionate about learning right now?</summary>
+                <p>I'm currently diving deeper into Generative AI, specifically exploring advanced LLM techniques for specialized tasks. I'm also very interested in assistive technology and how AI can be ethically used to improve accessibility for everyone.</p>
+            </details>
+        </section>
+        
         <section id="contact" class="contact-section" data-aos="fade-up" tabindex="0">
-
-            <h2>Let's Connect!</h2>
+            <h2>Let’s Connect!</h2>
             <p style="max-width: 720px; margin: 1.5rem auto 0; font-size: 1.05rem; color: var(--text-color); text-align: center; line-height: 1.6;">
                 I'm actively seeking new opportunities and collaborations. Feel free to reach out via email or connect with me on LinkedIn — happy to chat about AI, tech, or anything real.
             </p>
             
             <div class="contact-icons" role="list">
-            <a href="mailto:vidyacheekuri.us@gmail.com" aria-label="Send email to Sree Vidya Cheekuri" role="listitem"><i
-                    class="fas fa-envelope"></i></a>
-            <a href="https://www.linkedin.com/in/sreevidyacheekuri/" target="_blank" rel="noopener noreferrer"
-                aria-label="Visit LinkedIn profile" role="listitem"><i class="fab fa-linkedin"></i></a>
-            <a href="https://github.com/vidyacheekuri" target="_blank" rel="noopener noreferrer"
-                aria-label="Visit GitHub profile" role="listitem"><i class="fab fa-github"></i></a>
-        </div>
-        </section>
+                <a href="mailto:vidyacheekuri.us@gmail.com" aria-label="Send email" role="listitem"><i class="fas fa-envelope"></i></a>
+                <a href="https://www.linkedin.com/in/sreevidyacheekuri/" target="_blank" rel="noopener noreferrer" aria-label="Visit LinkedIn profile" role="listitem"><i class="fab fa-linkedin-in"></i></a>
+                <a href="https://github.com/vidyacheekuri" target="_blank" rel="noopener noreferrer" aria-label="Visit GitHub profile" role="listitem"><i class="fab fa-github"></i></a>
+            </div>
 
+            <!-- <a href="Sree - Resume.pdf" target="_blank" rel="noopener noreferrer" class="resume-button">View Resume</a> -->
+        </section>
     </main>
 
     <script src="https://cdn.jsdelivr.net/npm/tsparticles@2.11.1/tsparticles.bundle.min.js"></script>
