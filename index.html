@@ -219,6 +219,22 @@
             padding: 0;
             position: relative;
         }
+        /* NEW: Hero button group */
+        .hero-buttons {
+            display: flex;
+            gap: 1rem;
+            align-items: center;
+        }
+
+        .hero-buttons .button.secondary {
+            display: none; /* HIDDEN on desktop by default */
+            background-color: transparent !important;
+            color: var(--accent-color) !important;
+        }
+
+        .hero-buttons .button.secondary:hover {
+            background-color: var(--accent-tint-color) !important;
+        }
 
         #particles-js {
             position: absolute;
@@ -500,11 +516,28 @@
             color: var(--text-color-tertiary);
         }
 
+        /* NEW: Footer social links for mobile */
+        .footer-social-links {
+            display: none; /* Hidden on desktop */
+            justify-content: center;
+            gap: 2rem;
+            margin-bottom: 1.5rem;
+            font-size: 1.5rem;
+        }
+        .footer-social-links a {
+            color: var(--text-color-tertiary);
+            transition: color 0.3s;
+        }
+        .footer-social-links a:hover {
+            color: var(--accent-color);
+        }
+
         /* Responsive Design */
         @media (max-width: 1080px) {
             main { padding: 0 100px; }
             .social-links { display: none; }
             .project-cards { grid-template-columns: 1fr; }
+            .footer-social-links { display: flex; }
         }
 
         @media (max-width: 768px) {
@@ -513,6 +546,8 @@
             .hero { padding: 0 25px; }
             .hero h1 { font-size: 2.8rem; }
             .hero h2 { font-size: 2rem; min-height: 80px; }
+            .hero-buttons { flex-direction: column; }
+            .hero-buttons .button.secondary { display: inline-block; }
             h2 { font-size: 1.5rem; }
             
             nav { padding: 0 25px; }
@@ -551,7 +586,10 @@
             <p class="intro-text" data-aos="fade-up" data-aos-delay="400">
                 I'm a Data Scientist and Machine Learning Engineer specializing in computer vision and NLP. I transform complex data into actionable insights and build robust AI-driven solutions.
             </p>
-            <a href="https://www.linkedin.com/in/sreevidyacheekuri/" target="_blank" class="button" data-aos="fade-up" data-aos-delay="500">Get In Touch</a>
+            <div class="hero-buttons" data-aos="fade-up" data-aos-delay="500">
+                <a href="https://www.linkedin.com/in/sreevidyacheekuri/" target="_blank" class="button" data-aos="fade-up" data-aos-delay="500">Get In Touch</a>
+                <a href="Sree - Resume.pdf" target="_blank" rel="noopener noreferrer" class="button secondary">View Resume</a>
+            </div>
         </section>
 
         <section id="about" data-aos="fade-up">
@@ -769,6 +807,11 @@
     </main>
 
     <footer>
+        <div class="footer-social-links">
+            <a href="https://github.com/vidyacheekuri" target="_blank" rel="noopener noreferrer" aria-label="Visit GitHub profile"><i class="fab fa-github"></i></a>
+            <a href="https://www.linkedin.com/in/sreevidyacheekuri/" target="_blank" rel="noopener noreferrer" aria-label="Visit LinkedIn profile"><i class="fab fa-linkedin-in"></i></a>
+            <a href="mailto:vidyacheekuri.us@gmail.com" aria-label="Send email"><i class="fas fa-envelope"></i></a>
+        </div>
         <p>...</p>
     </footer>
 
