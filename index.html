@@ -428,6 +428,17 @@
             color: var(--accent-color);
             -webkit-text-stroke-color: var(--accent-color); /* Makes outline solid on hover */
         }
+
+        .card .ongoing-badge {
+            display: inline-block;
+            font-family: var(--font-mono);
+            font-size: 0.7rem;
+            color: var(--accent-color);
+            border: 1px solid var(--accent-color);
+            padding: 0.2rem 0.5rem;
+            border-radius: 4px;
+            margin-bottom: 0.5rem;
+        }
         /* --- Publications Section --- */
         .publication-card {
             background: var(--card-bg-color);
@@ -681,6 +692,24 @@
         <section id="projects" data-aos="fade-up">
             <h2>Things I've Built</h2>
             <div class="project-cards">
+                <div class="card">
+                    <div class="project-links">
+                        <a href="https://github.com/vidyacheekuri/Pulse-AI" target="_blank" rel="noopener noreferrer" aria-label="GitHub Link"><i class="fab fa-github"></i></a>
+                    </div>
+                    <div class="card-content">
+                        <span class="ongoing-badge">Ongoing</span>
+                        <h3>PulseAI — AI Ecosystem Intelligence Engine</h3>
+                        <p>A production-grade ML system that monitors official AI labs, frameworks, research papers, and trending GitHub repos. Uses transformer-based NLP for semantic deduplication, release detection, summarization, and hybrid ranking.</p>
+                        <ul>
+                            <li>Ingests from tiered sources (OpenAI, Anthropic, LangChain, TechCrunch, GitHub Trending) with priority-aware deduplication.</li>
+                            <li>Two-pass classification: topic categorization + release detection using BART; vector similarity search via pgvector.</li>
+                            <li>FastAPI dashboard with personalized feed, hybrid ranking engine, and scheduled ingestion.</li>
+                        </ul>
+                    </div>
+                    <div class="tech-stack">
+                        <span>FastAPI</span><span>PostgreSQL</span><span>pgvector</span><span>Transformers</span>
+                    </div>
+                </div>
                 <div class="card">
                     <div class="project-links">
                         <a href="https://github.com/vidyacheekuri/Robotic_Item_Picking" target="_blank" rel="noopener noreferrer" aria-label="GitHub Link"><i class="fab fa-github"></i></a>
