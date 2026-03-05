@@ -28,7 +28,6 @@
             --font-sans: 'Inter', sans-serif;
             --font-mono: 'Fira Code', monospace;
             
-            /* Default to Dark Theme */
             --bg-color: var(--dark-navy);
             --nav-bg-color: rgba(10, 25, 47, 0.85);
             --card-bg-color: var(--light-navy);
@@ -47,20 +46,14 @@
             --text-color-primary: #333;
             --text-color-secondary: #555;
             --text-color-tertiary: #777;
-            --accent-color: #0056b3; /* A professional blue for light mode */
+            --accent-color: #0056b3;
             --accent-tint-color: rgba(0, 86, 179, 0.1);
             --line-color: #dce6f1;
         }
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
 
-        html {
-            scroll-behavior: smooth;
-        }
+        html { scroll-behavior: smooth; }
         
         body {
             font-family: var(--font-sans);
@@ -71,9 +64,7 @@
             transition: background-color 0.3s, color 0.3s;
         }
 
-        main {
-            padding: 0 150px;
-        }
+        main { padding: 0 150px; }
         
         section {
             max-width: 1000px;
@@ -99,9 +90,7 @@
             margin-left: 20px;
         }
 
-        ul {
-            list-style: none;
-        }
+        ul { list-style: none; }
         
         li {
             position: relative;
@@ -116,7 +105,6 @@
             color: var(--accent-color);
         }
         
-        /* --- Navigation --- */
         nav {
             display: flex;
             justify-content: space-between;
@@ -146,9 +134,7 @@
             gap: 1.5rem;
         }
 
-        nav ol li {
-            position: relative;
-        }
+        nav ol li { position: relative; }
         
         nav ol li a {
             color: var(--text-color-primary);
@@ -158,9 +144,7 @@
             transition: color 0.3s;
         }
         
-        nav ol li a:hover, nav ol li a.active {
-            color: var(--accent-color);
-        }
+        nav ol li a:hover, nav ol li a.active { color: var(--accent-color); }
         
         nav ol li a::after {
             content: '';
@@ -175,10 +159,7 @@
             transition: transform 0.3s ease-in-out;
         }
 
-        nav ol li a:hover::after, nav ol li a.active::after {
-            transform: scaleX(1);
-        }
-
+        nav ol li a:hover::after, nav ol li a.active::after { transform: scaleX(1); }
         nav ol li::before, nav ol li a::before { content: none; padding-left: 0; }
 
         .button {
@@ -194,9 +175,7 @@
             text-decoration: none;
             transition: all 0.3s ease;
         }
-        .button:hover {
-            background-color: var(--accent-tint-color);
-        }
+        .button:hover { background-color: var(--accent-tint-color); }
 
         .theme-toggle {
             font-size: 1.5rem;
@@ -204,11 +183,8 @@
             cursor: pointer;
             transition: color 0.3s;
         }
-        .theme-toggle:hover {
-            color: var(--text-color-primary);
-        }
+        .theme-toggle:hover { color: var(--text-color-primary); }
 
-        /* --- Hero Section --- */
         .hero {
             display: flex;
             flex-direction: column;
@@ -219,22 +195,14 @@
             padding: 0;
             position: relative;
         }
-        /* NEW: Hero button group */
-        .hero-buttons {
-            display: flex;
-            gap: 1rem;
-            align-items: center;
-        }
 
+        .hero-buttons { display: flex; gap: 1rem; align-items: center; }
         .hero-buttons .button.secondary {
-            display: none; /* HIDDEN on desktop by default */
+            display: none;
             background-color: transparent !important;
             color: var(--accent-color) !important;
         }
-
-        .hero-buttons .button.secondary:hover {
-            background-color: var(--accent-tint-color) !important;
-        }
+        .hero-buttons .button.secondary:hover { background-color: var(--accent-tint-color) !important; }
 
         #particles-js {
             position: absolute;
@@ -251,23 +219,14 @@
         .hero h1 { font-size: 3.8rem; color: var(--text-color-primary); line-height: 1.1; margin-bottom: 10px; }
         .hero h2 { font-size: 2.8rem; color: var(--text-color-tertiary); line-height: 1.1; margin-bottom: 30px; min-height: 100px; }
         .hero h2::after { display: none; }
-        .hero .intro-text { max-width: 600px; margin-bottom: 40px; }
+        .hero .button { width: 160px; padding: 0.6rem 0; font-size: 0.8rem; text-align: center; }
         
-        .hero .button { 
-            width: 160px;
-            padding: 0.6rem 0;
-            font-size: 0.8rem; 
-            text-align: center;
-        }
-        
-        /* --- About Section --- */
         #about p {
             max-width: 750px;
             margin-bottom: 1.5rem;
             letter-spacing: 0.5px;
         }
 
-        /* --- Skills Section --- */
         .skills-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -283,11 +242,7 @@
             padding-bottom: 0.5rem;
         }
 
-        .skills-list {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.75rem;
-        }
+        .skills-list { display: flex; flex-wrap: wrap; gap: 0.75rem; }
 
         .skills-list span {
             background: var(--card-bg-color);
@@ -301,22 +256,15 @@
             cursor: default;
         }
 
-        .skills-list span:hover {
-            color: var(--accent-color);
-            border-color: var(--accent-color);
-        }
+        .skills-list span:hover { color: var(--accent-color); border-color: var(--accent-color); }
 
-        /* --- Experience (Timeline) --- */
         .timeline {
             position: relative;
             border-left: 2px solid var(--line-color);
             padding-left: 3rem;
         }
 
-        .timeline-item {
-            margin-bottom: 3rem;
-            position: relative;
-        }
+        .timeline-item { margin-bottom: 3rem; position: relative; }
 
         .timeline-item::before {
             content: '';
@@ -335,24 +283,10 @@
             color: var(--text-color-primary);
             margin-bottom: 0.2rem;
         }
-        
-        .timeline-content h3 span {
-            color: var(--text-color-secondary);
-            font-weight: normal;
-        }
+        .timeline-content h3 span { color: var(--text-color-secondary); font-weight: normal; }
+        .timeline-content .date { font-family: var(--font-mono); color: var(--text-color-tertiary); font-size: 0.8rem; margin-bottom: 1rem; }
+        .timeline-content ul { font-size: 1rem; }
 
-        .timeline-content .date {
-            font-family: var(--font-mono);
-            color: var(--text-color-tertiary);
-            font-size: 0.8rem;
-            margin-bottom: 1rem;
-        }
-        
-        .timeline-content ul {
-            font-size: 1rem;
-        }
-
-        /* --- Projects --- */
         .project-cards {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
@@ -370,14 +304,10 @@
             flex-direction: column;
         }
 
-        .card:hover {
-            transform: translateY(-7px);
-        }
-        
+        .card:hover { transform: translateY(-7px); }
         .card-content { flex-grow: 1; }
         .card-content p { margin-bottom: 1rem; } 
         .card-content ul { font-size: 0.95rem; }
-
 
         .card h3 {
             margin-bottom: 1rem;
@@ -401,32 +331,23 @@
             border-radius: 15px;
         }
         
-        .project-links {
-            text-align: right;
-            margin-bottom: 0.5rem;
-        }
+        .project-links { text-align: right; margin-bottom: 0.5rem; }
         .project-links a {
             color: var(--text-color-primary);
             font-size: 1.5rem;
             margin-left: 1rem;
             transition: color 0.3s;
         }
-        
-        .project-links a:hover {
-            color: var(--accent-color);
-        }
-
-        /* Updated Icon Outline Style */
+        .project-links a:hover { color: var(--accent-color); }
         .project-links a .fa-github {
             font-size: 1.5rem;
             color: transparent;
-            -webkit-text-stroke: 1.5px rgba(100, 255, 218, 0.75); /* Green with 75% opacity */
+            -webkit-text-stroke: 1.5px rgba(100, 255, 218, 0.75);
             transition: all 0.3s ease;
         }
-
         .project-links a:hover .fa-github {
             color: var(--accent-color);
-            -webkit-text-stroke-color: var(--accent-color); /* Makes outline solid on hover */
+            -webkit-text-stroke-color: var(--accent-color);
         }
 
         .card .ongoing-badge {
@@ -439,7 +360,7 @@
             border-radius: 4px;
             margin-bottom: 0.5rem;
         }
-        /* --- Publications Section --- */
+
         .publication-card {
             background: var(--card-bg-color);
             padding: 1.8rem 1.5rem;
@@ -448,14 +369,8 @@
             transition: transform 0.3s ease, box-shadow 0.3s ease;
             position: relative;
         }
-        .publication-card:hover {
-             transform: translateY(-7px);
-        }
-        .publication-card h3 {
-            color: var(--text-color-primary);
-            font-size: 1.4rem;
-            margin-bottom: 1rem;
-        }
+        .publication-card:hover { transform: translateY(-7px); }
+        .publication-card h3 { color: var(--text-color-primary); font-size: 1.4rem; margin-bottom: 1rem; }
         .publication-card .external-link {
             position: absolute;
             top: 1.8rem;
@@ -464,29 +379,14 @@
             font-size: 1.5rem;
             transition: color 0.3s;
         }
-        .publication-card .external-link:hover {
-            color: var(--accent-color);
-        }
+        .publication-card .external-link:hover { color: var(--accent-color); }
         .publication-card ul { font-size: 0.95rem; }
 
-
-        /* --- Contact --- */
-        .contact-section {
-            text-align: center;
-            max-width: 650px;
-        }
-        
-        .contact-section h2 {
-            justify-content: center;
-        }
+        .contact-section { text-align: center; max-width: 650px; }
+        .contact-section h2 { justify-content: center; }
         .contact-section h2::after { display: none; }
-
-        .contact-section .button {
-            margin-top: 40px;
-            font-size: 1rem;
-        }
+        .contact-section .button { margin-top: 40px; font-size: 1rem; }
         
-        /* --- Social Links & Footer --- */
         .social-links {
             position: fixed;
             bottom: 0;
@@ -504,12 +404,7 @@
             font-size: 1.3rem;
             transition: all 0.3s;
         }
-        
-        .social-links a:hover {
-            color: var(--accent-color);
-            transform: translateY(-3px);
-        }
-
+        .social-links a:hover { color: var(--accent-color); transform: translateY(-3px); }
         .social-links::after {
             content: '';
             display: block;
@@ -527,23 +422,16 @@
             color: var(--text-color-tertiary);
         }
 
-        /* NEW: Footer social links for mobile */
         .footer-social-links {
-            display: none; /* Hidden on desktop */
+            display: none;
             justify-content: center;
             gap: 2rem;
             margin-bottom: 1.5rem;
             font-size: 1.5rem;
         }
-        .footer-social-links a {
-            color: var(--text-color-tertiary);
-            transition: color 0.3s;
-        }
-        .footer-social-links a:hover {
-            color: var(--accent-color);
-        }
+        .footer-social-links a { color: var(--text-color-tertiary); transition: color 0.3s; }
+        .footer-social-links a:hover { color: var(--accent-color); }
 
-        /* Responsive Design */
         @media (max-width: 1080px) {
             main { padding: 0 100px; }
             .social-links { display: none; }
@@ -560,7 +448,6 @@
             .hero-buttons { flex-direction: column; }
             .hero-buttons .button.secondary { display: inline-block; }
             h2 { font-size: 1.5rem; }
-            
             nav { padding: 0 25px; }
             nav ol { display: none; }
         }
@@ -577,7 +464,6 @@
             <li><a href="#experience" class="nav-link">Experience</a></li>
             <li><a href="#projects" class="nav-link">Projects</a></li>
             <li><a href="#contact" class="nav-link">Contact</a></li>
-            <li><a href="Sree-Resume.pdf" target="_blank" rel="noopener noreferrer" class="button">Resume</a></li>
             <li><div class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme" role="button"><i class="fas fa-adjust"></i></div></li>
         </ol>
     </nav>
@@ -594,12 +480,8 @@
             <p data-aos="fade-up" data-aos-delay="100">Hi, my name is</p>
             <h1 data-aos="fade-up" data-aos-delay="200">Sree Vidya Cheekuri.</h1>
             <h2 data-aos="fade-up" data-aos-delay="300" class="tagline"></h2>
-            <p class="intro-text" data-aos="fade-up" data-aos-delay="400">
-                I'm a Data Scientist and Machine Learning Engineer specializing in computer vision and NLP. I transform complex data into actionable insights and build robust AI-driven solutions.
-            </p>
             <div class="hero-buttons" data-aos="fade-up" data-aos-delay="500">
                 <a href="https://www.linkedin.com/in/sreevidyacheekuri/" target="_blank" class="button" data-aos="fade-up" data-aos-delay="500">Get In Touch</a>
-                <a href="Sree-Resume.pdf" target="_blank" rel="noopener noreferrer" class="button secondary">View Resume</a>
             </div>
         </section>
 
@@ -660,9 +542,8 @@
                         <h3>Machine Learning Research Intern @ <span>University of Houston</span></h3>
                         <p class="date">Nov 2024 – Present</p>
                         <ul>
-                            <li>Applying ML to material science, building predictive models for concrete durability to tackle corrosion and leaching.</li>
-                            <li>Achieved 92% model accuracy while cutting traditional testing times in half through ensemble learning and neural networks.</li>
-                            <li>Directly contributing to research in sustainable infrastructure development.</li>
+                            <li>Built an ensemble of Random Forest, XGBoost, and SVR models to forecast concrete strength, corrosion risk, and leaching behavior. Lab-based testing for these properties is slow and expensive; this pipeline cuts cycle time in half while maintaining strong predictive power, so researchers can iterate faster on sustainable mix designs.</li>
+                            <li>Designed a containerized safety-monitoring system powered by Vision-Language Models (Qwen 2.5-VL) and PyTorch. It scans construction imagery for OSHA-related hazards — unprotected edges, exposed wiring, missing PPE, unsafe scaffolding — using zero-shot recognition across 40+ risk categories, giving site managers a real-time compliance dashboard.</li>
                         </ul>
                     </div>
                 </div>
@@ -671,8 +552,8 @@
                         <h3>AI/ML Research Intern @ <span>Deakin University, Australia</span></h3>
                         <p class="date">Mar 2023 – Jul 2023</p>
                         <ul>
-                            <li>Developed a full web service to forecast tourism demand, achieving 85% predictive accuracy using ARIMA and LSTM models.</li>
-                            <li>Engineered the entire backend pipeline with Flask and SQL, delivering real-time forecasts via a RESTful API.</li>
+                            <li>Implemented a tourism demand forecasting pipeline combining ARIMA (for trends and seasonality) with LSTM (for nonlinear patterns) on 5+ years of historical data. The model supports capacity planning and resource allocation for tourism operators, with versioned model artifacts for reproducibility.</li>
+                            <li>Built a Flask-backed inference service with SQL storage that serves predictions on demand. The design separates model refresh from API contracts, so newer models can be swapped in without disrupting consumers — enabling iterative deployment and continuous improvement.</li>
                         </ul>
                     </div>
                 </div>
@@ -681,8 +562,7 @@
                         <h3>Full Stack Web Developer @ <span>Solar Secure Solutions</span></h3>
                         <p class="date">May 2022 – Jul 2022</p>
                         <ul>
-                            <li>Engineered and deployed interactive web modules for client-facing platforms using Python, JavaScript, and HTML/CSS.</li>
-                            <li>Improved user navigation and interactivity, leading to a 25% increase in user engagement.</li>
+                            <li>Shipped interactive web modules using HTML, CSS, JavaScript, and Python, with RESTful APIs connecting frontend and backend. The dashboards and UX improvements led to a measurable jump in user engagement across client platforms.</li>
                         </ul>
                     </div>
                 </div>
@@ -694,20 +574,20 @@
             <div class="project-cards">
                 <div class="card">
                     <div class="project-links">
-                        <a href="https://github.com/vidyacheekuri/Pulse-AI" target="_blank" rel="noopener noreferrer" aria-label="GitHub Link"><i class="fab fa-github"></i></a>
+                        <a href="https://github.com/vidyacheekuri/Tech-Sage" target="_blank" rel="noopener noreferrer" aria-label="GitHub Link"><i class="fab fa-github"></i></a>
                     </div>
                     <div class="card-content">
                         <span class="ongoing-badge">Ongoing</span>
-                        <h3>PulseAI — AI Ecosystem Intelligence Engine</h3>
-                        <p>A production-grade ML system that monitors official AI labs, frameworks, research papers, and trending GitHub repos. Uses transformer-based NLP for semantic deduplication, release detection, summarization, and hybrid ranking.</p>
+                        <h3>TechSage — AI Ecosystem Intelligence</h3>
+                        <p>A full-stack system that pulls in AI-related news from labs, frameworks, media, and GitHub, then cleans, clusters, and ranks it. Instead of scrolling dozens of feeds, you get a unified, deduplicated view of what’s worth attention — with an optional RAG chat so you can ask questions in natural language and get answers grounded in recent articles.</p>
                         <ul>
-                            <li>Ingests from tiered sources (OpenAI, Anthropic, LangChain, TechCrunch, GitHub Trending) with priority-aware deduplication.</li>
-                            <li>Two-pass classification: topic categorization + release detection using BART; vector similarity search via pgvector.</li>
-                            <li>FastAPI dashboard with personalized feed, hybrid ranking engine, and scheduled ingestion.</li>
+                            <li>Sources span four tiers (official labs, framework vendors, tech press, GitHub trending). When the same story appears everywhere, the pipeline keeps the canonical copy and links the rest, using 384-dim embeddings and cosine similarity for semantic dedup.</li>
+                            <li>Two-stage classification: BART labels topics (LLMs, Agents, Infrastructure, etc.) and release types (Model Release, Framework Update, etc.); pgvector supports similarity search and personalized retrieval for the RAG chat.</li>
+                            <li>FastAPI + PostgreSQL backend, APScheduler for periodic ingestion (news every 5 min, GitHub every 6 hrs), and a React-style dashboard with tabs for Models, Frameworks, Agents, Research, and an Ask interface that cites sources for every answer.</li>
                         </ul>
                     </div>
                     <div class="tech-stack">
-                        <span>FastAPI</span><span>PostgreSQL</span><span>pgvector</span><span>Transformers</span>
+                        <span>FastAPI</span><span>PostgreSQL</span><span>pgvector</span><span>RAG</span>
                     </div>
                 </div>
                 <div class="card">
@@ -716,11 +596,10 @@
                     </div>
                     <div class="card-content">
                         <h3>6D Pose Estimation for Robotic Grasping</h3>
-                        <p>I tackled the challenge of teaching a robot to see and grasp objects in 3D space from a single image.</p>
+                        <p>A deep learning pipeline that predicts 6D object pose — 3D position plus 3D orientation — from a single RGB image, mimicking warehouse-style bin picking where a robot must identify and grasp items from clutter. The system uses transfer learning: a frozen ResNet50 backbone feeds into a custom regression head that outputs translation (x,y,z) and a 6D rotation representation (more stable than quaternions for training).</p>
                         <ul>
-                            <li>Architected an end-to-end vision system using a PyTorch and ResNet50 backbone.</li>
-                            <li>Engineered the model to regress an object's precise 3D rotation and translation.</li>
-                            <li>Achieved near-perfect spatial awareness with a validation MSE of less than 0.0002.</li>
+                            <li>Trained on the YCB-Video dataset; the PoseNet-style model achieves sub-millimeter translation error and learns rotation in a continuous 6D space before converting to rotation matrices for evaluation. The architecture is modular and suitable for integration into robotic workflows.</li>
+                            <li>End-to-end script-based workflow: data ingestion, dataset splitting, training, evaluation, and packaging. Addressed real-world hurdles — Open3D/PyTorch conflicts on macOS, broken dataset mirrors, Git LFS for large model files — resulting in a reproducible Conda environment and clear MLOps practices.</li>
                         </ul>
                     </div>
                     <div class="tech-stack">
@@ -733,15 +612,14 @@
                     </div>
                     <div class="card-content">
                         <h3>Video Action Recognition</h3>
-                        <p>This project focused on teaching a machine to understand diverse human actions in raw video clips.</p>
+                        <p>A PyTorch-based system that classifies human actions in video clips across 101 categories (UCF101): from sports and instruments to everyday activities. The repo supports two backbones — CNN+LSTM (2D CNN per frame, LSTM over time) and R3D-18 (3D ResNet) — with a Flask web UI for drag-and-drop prediction and a full training pipeline.</p>
                         <ul>
-                            <li>Designed a deep learning model combining a CNN for spatial features with an LSTM for temporal analysis.</li>
-                            <li>Processed and trained the model on the UCF101 dataset, which contains 101 action categories.</li>
-                            <li>Achieved 88% accuracy in classifying actions from 16-frame video sequences.</li>
+                            <li>The CNN+LSTM variant extracts spatial features per frame and models temporal dynamics with an LSTM; R3D-18 uses 3D convolutions to fuse space and time. Both accept configurable frame counts (e.g., 16 or 32) and frame sizes for tradeoffs between accuracy and speed.</li>
+                            <li>Includes data loaders, augmentation, label encoding, checkpointing, and experiment tracking. The Flask app serves real-time predictions so you can upload a video and see the predicted action instantly. Built for extensibility: adding new architectures or datasets follows a clear pattern.</li>
                         </ul>
                     </div>
                     <div class="tech-stack">
-                        <span>Deep Learning</span><span>CNN</span><span>LSTM</span><span>TensorFlow</span>
+                        <span>PyTorch</span><span>CNN</span><span>LSTM</span><span>R3D</span><span>Flask</span>
                     </div>
                 </div>
                 <div class="card">
@@ -750,15 +628,14 @@
                     </div>
                     <div class="card-content">
                         <h3>Generative Storytelling with AI</h3>
-                        <p>I created a multimodal AI system capable of turning simple text prompts into fully animated videos.</p>
+                        <p>An automated pipeline that turns a single text prompt into a narrated video: a Transformer-based LLM (GPT-4o) expands the prompt into a story, an image model (DALL-E 3) renders each sentence as a scene, and a TTS model produces voiceover. MoviePy stitches images, audio, and text overlays into a final video — useful for education, demos, and quick content creation.</p>
                         <ul>
-                            <li>Utilized Large Language Models (LLMs) to interpret the narrative and scene structure from text.</li>
-                            <li>Employed Generative Adversarial Networks (GANs) to create the corresponding visual scenes.</li>
-                            <li>Achieved a 95% scene-text alignment, creating a powerful tool for automated content creation.</li>
+                            <li>The LLM stage uses decoder-style attention to generate coherent multi-sentence narratives; the image stage relies on a GAN-like paradigm for text-to-image synthesis. Each sentence becomes a clip (image + audio + overlay), then clips are concatenated into the final output.</li>
+                            <li>Built with Python, FFmpeg, and ImageMagick for media handling. The pipeline is modular: swap models or adjust generation params without rewriting the assembly logic. Includes demo assets and a sample run from a "cat astronaut on a candy planet" prompt.</li>
                         </ul>
                     </div>
                     <div class="tech-stack">
-                        <span>LLMs</span><span>GANs</span><span>NLP</span><span>Hugging Face</span>
+                        <span>GPT-4</span><span>DALL-E</span><span>TTS</span><span>MoviePy</span>
                     </div>
                 </div>
                 <div class="card">
@@ -767,15 +644,14 @@
                     </div>
                     <div class="card-content">
                         <h3>Multilingual Intent Classification & Slot Filling</h3>
-                        <p>A multilingual NLU system that classifies intents and extracts slots from user utterances.</p>
+                        <p>An NLU pipeline for voice assistants and chatbots: given an utterance like "Play jazz by Miles Davis tomorrow at 6 PM," it predicts the intent (play_music) and extracts slots (MUSIC_GENRE=jazz, ARTIST_NAME=Miles Davis, DATE_TIME=tomorrow at 6 PM). Both intent and slot models are built on fine-tuned XLM-RoBERTa; slots use BIO tagging plus a CRF layer to enforce valid span transitions.</p>
                         <ul>
-                            <li>Fine-tuned XLM-RoBERTa for intent classification and slot tagging across 51 languages.</li>
-                            <li>Added a CRF-based decoder for structured slot predictions with BIO tagging.</li>
-                            <li>Built a Streamlit demo with model caching for fast, interactive inference.</li>
+                            <li>Trained on the MASSIVE dataset (Amazon Science), which provides parallel annotations across 51 languages for 60 intents and 55 slot types. A single model handles all languages — no per-language variants. The Streamlit app runs both models in sequence: type or paste an utterance and see intent (with confidence) plus extracted slots in real time.</li>
+                            <li>Slot filling uses a token-level classification head with a CRF on top: B-ARTIST, I-ARTIST, O, etc. The CRF avoids invalid transitions (e.g., I-ARTIST before B-ARTIST). Models can be loaded from local checkpoints or Hugging Face Hub; the app works on Streamlit Cloud with lazy model loading.</li>
                         </ul>
                     </div>
                     <div class="tech-stack">
-                        <span>XLM-RoBERTa</span><span>Transformers</span><span>CRF</span><span>Streamlit</span>
+                        <span>XLM-RoBERTa</span><span>MASSIVE</span><span>CRF</span><span>Streamlit</span>
                     </div>
                 </div>
                 <div class="card">
@@ -784,10 +660,10 @@
                     </div>
                     <div class="card-content">
                         <h3>Concrete Strength Prediction</h3>
-                        <p>This project provides a robust tool for construction quality control by accurately predicting concrete strength.</p>
+                        <p>Compressive strength of concrete depends on mix proportions (cement, water, aggregates, admixtures) and curing. This project predicts strength from these inputs so engineers can optimize mixes and avoid over-specification or underperforming batches. Useful for quality control and mix design iteration.</p>
                         <ul>
-                            <li>Built a meta-learning ensemble of stratified CatBoost models.</li>
-                            <li>Leveraged domain-informed feature engineering to achieve high predictive accuracy.</li>
+                            <li>Uses a stratified CatBoost ensemble: separate models for different strength bands to improve calibration across the full range. Domain-aware features (water-cement ratio, curing age, aggregate gradation) make predictions interpretable and align with material science.</li>
+                            <li>End-to-end pipeline from raw mix data to predictions, with feature engineering, cross-validation, and model serialization for deployment into downstream tools or APIs.</li>
                         </ul>
                     </div>
                     <div class="tech-stack">
@@ -800,10 +676,10 @@
                     </div>
                     <div class="card-content">
                         <h3>Chloride Corrosion Prediction</h3>
-                        <p>An ensemble ML pipeline designed to predict chloride-induced corrosion in reinforced concrete.</p>
+                        <p>Steel reinforcement in concrete can corrode when chlorides (from de-icing salts or seawater) penetrate the cover. This pipeline predicts corrosion risk from mix design, exposure, and environmental factors — informing maintenance schedules, cover depth choices, and coating decisions for bridges, parking decks, and coastal structures.</p>
                         <ul>
-                            <li>Utilized a combination of MLP and XGBoost models for high-accuracy predictions.</li>
-                            <li>Provides a powerful predictive tool for assessing long-term infrastructure durability.</li>
+                            <li>Ensemble of MLP and XGBoost: neural nets capture nonlinearity, gradient boosting adds robustness. Includes data augmentation and feature scaling for noisy real-world datasets. Sensitivity analysis helps identify which inputs drive risk most.</li>
+                            <li>Complete workflow from raw data to trained models, with clear artifact organization for reproducibility and integration into durability assessment tools.</li>
                         </ul>
                     </div>
                     <div class="tech-stack">
@@ -816,14 +692,62 @@
                     </div>
                     <div class="card-content">
                         <h3>Assistive Tech for the Visually Impaired</h3>
-                        <p>I developed a tool to help visually impaired individuals perceive emotional context in conversations.</p>
+                        <p>A MATLAB-based system that helps visually impaired users infer emotional context in conversations. Facial expressions (smiles, frowns, surprise) are often missed; this tool detects faces, classifies emotions, and delivers real-time audio feedback via text-to-speech so users can respond more naturally.</p>
                         <ul>
-                            <li>Built a MATLAB-based system using Local Binary Patterns and Neural Networks for face detection.</li>
-                            <li>The model recognizes emotions with 93% accuracy and provides real-time voice feedback to the user.</li>
+                            <li>Local Binary Patterns extract texture features from detected face regions; a neural network classifies emotions (e.g., happy, sad, neutral). The pipeline runs in near real time and pipes output to TTS for accessibility.</li>
+                            <li>Designed for practical use: robust to lighting and pose variations, with a simple interface so users can rely on it during live interactions without distraction.</li>
                         </ul>
                     </div>
                     <div class="tech-stack">
-                        <span>MATLAB</span><span>Neural Networks</span><span>Computer Vision</span>
+                        <span>MATLAB</span><span>LBP</span><span>Neural Networks</span>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="project-links">
+                        <a href="https://github.com/vidyacheekuri/traffic-simulator" target="_blank" rel="noopener noreferrer" aria-label="GitHub Link"><i class="fab fa-github"></i></a>
+                    </div>
+                    <div class="card-content">
+                        <h3>Traffic Simulator for Cybersecurity Training</h3>
+                        <p>An NSF-supported traffic simulation platform built with SUMO and TraCI for studying cyber attacks on traffic infrastructure. Simulates vehicles, pedestrians, and traffic lights at intersections — from simple 4-way setups to the real-world Sioux Falls network — with configurable control logic.</p>
+                        <ul>
+                            <li>Includes pedestrian-actuated signals: TraCI detects waiting pedestrians and triggers green phases only when needed (after minimum vehicle green). Vehicle-actuated controller extends green when queues are present. Demonstrates how realistic signal logic can be modeled and manipulated for security research.</li>
+                            <li>Sioux Falls network: 24 nodes, 76 edges, converted from GraphML. Queue-based adaptive controller and IDM car-following. Shell scripts for quick demos; requires SUMO and SUMO_HOME. Used for cybersecurity training scenarios where attackers target signal timing or sensor data.</li>
+                        </ul>
+                    </div>
+                    <div class="tech-stack">
+                        <span>Python</span><span>SUMO</span><span>TraCI</span>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="project-links">
+                        <a href="https://github.com/vidyacheekuri/leaching-prediction" target="_blank" rel="noopener noreferrer" aria-label="GitHub Link"><i class="fab fa-github"></i></a>
+                    </div>
+                    <div class="card-content">
+                        <h3>21-Element Cement Leaching Prediction</h3>
+                        <p>Predicts elemental leaching from monolithic cement materials under varying pH and time. When concrete is exposed to aggressive environments, trace elements can leach out — relevant for waste encapsulation, dams, and durability. This project forecasts cumulative release (mg/m²) for 20 elements (Al, As, Ba, Ca, Cd, Cr, Cu, Fe, K, Mg, Na, Pb, Si, Zn, etc.) from mix and exposure inputs.</p>
+                        <ul>
+                            <li>XGBoost-dominated ensemble with 25+ engineered features (interactions, polynomial terms, domain-specific metrics). Material-specific logic for problematic elements (Al, Br) with conditional ensemble selection. R² > 0.85, median absolute percentage error &lt; 1%.</li>
+                            <li>Flask web app and REST API for predictions; deployed live on Railway. Supports multiple cement types (CEM I–V), form types (Concrete, Mortar, Sewage_Sludge), and statistical measures. Model serialization and config-driven training for reproducibility.</li>
+                        </ul>
+                    </div>
+                    <div class="tech-stack">
+                        <span>XGBoost</span><span>Flask</span><span>REST API</span>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="project-links">
+                        <a href="https://github.com/vidyacheekuri/Job-Search-Agent" target="_blank" rel="noopener noreferrer" aria-label="GitHub Link"><i class="fab fa-github"></i></a>
+                    </div>
+                    <div class="card-content">
+                        <h3>Job-Search Agent (Middle America AI Engineer)</h3>
+                        <p>An AI for Engineers assignment: an autonomous agent that finds AI Engineer roles at mid-sized “Middle America” companies (excluding FAANG+ and early-stage startups). It searches job boards, filters by company size and location, ranks by profile fit, and generates tailored resumes and cover letters for the top matches.</p>
+                        <ul>
+                            <li>Pipeline: scrape LinkedIn, Indeed, Greenhouse; blacklist 40+ big-tech firms; exclude startups via employee-count heuristic; rank by skill match, location preference, recency; tailor materials for top 3. Optional OpenAI integration for stronger generation; works fully offline with heuristic-based ranking.</li>
+                            <li>React frontend, FastAPI backend. Includes design doc, requirements, benchmark dataset (20 jobs), evaluation metrics (Precision@10, Interview Yield), ethics/bias analysis, filter-toggle experiments. Built for the AI for Engineers course with full trace logging for every filter and rank decision.</li>
+                        </ul>
+                    </div>
+                    <div class="tech-stack">
+                        <span>Python</span><span>FastAPI</span><span>React</span>
                     </div>
                 </div>
             </div>
@@ -835,8 +759,8 @@
                 <a href="https://doi.org/10.1109/INCET61516.2024.10592975" target="_blank" rel="noopener noreferrer" aria-label="External Link" class="external-link"><i class="fas fa-external-link-alt"></i></a>
                 <h3>Pneumonia Detection using Machine Learning</h3>
                 <ul>
-                    <li>Designed and validated a CNN-based diagnostic system to accurately detect pneumonia from chest X-rays.</li>
-                    <li>Published in the IEEE 5th INCET 2024 conference, ensuring clinical relevance and model robustness.</li>
+                    <li>A CNN-based pipeline for pneumonia detection from chest X-rays, validated on labeled medical datasets with input from clinical advisors. The system targets radiology workflows where AI can flag suspicious cases for prioritization, not replace human judgment.</li>
+                    <li>Published at IEEE 5th INCET 2024 after peer review. The paper documents model design, validation protocol, and findings, adding to the literature on AI-assisted diagnostic tools in medical imaging.</li>
                 </ul>
                 <div class="tech-stack">
                     <span>IEEE</span><span>CNN</span><span>Computer Vision</span><span>Medical Imaging</span>
@@ -864,10 +788,8 @@
     <script src="https://cdn.jsdelivr.net/npm/tsparticles@2.11.1/tsparticles.bundle.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
     <script>
-        // AOS animation init
         AOS.init({ duration: 900, once: true, offset: 50 });
 
-        // Typing effect for hero section
         const taglineEl = document.querySelector('.tagline');
         const phrases = ["Data Scientist", "Machine Learning Engineer", "Artificial Intelligence Researcher", "Python Developer", "NLP Engineer"];
         let i = 0, j = 0;
@@ -891,24 +813,19 @@
             setTimeout(typeWriter, deleting ? 60 : 120);
         }
         
-        // --- Theme Toggle ---
         function toggleTheme() {
             document.body.classList.toggle('light-mode');
             localStorage.setItem('theme', document.body.classList.contains('light-mode') ? 'light' : 'dark');
         }
 
-        // Apply saved theme on load
         (function() {
             const savedTheme = localStorage.getItem('theme');
             if (savedTheme === 'light') {
                 document.body.classList.add('light-mode');
             }
-            // Start typing animation after theme is set to avoid flash of unstyled text
             typeWriter();
         })();
 
-
-        // --- Nav highlighting ---
         const navLinks = document.querySelectorAll('nav ol li a.nav-link');
         const sections = document.querySelectorAll('main section');
 
@@ -935,7 +852,6 @@
             if(section.id) sectionObserver.observe(section);
         });
         
-        // tsParticles config
         tsParticles.load("particles-js", {
             fullScreen: { enable: false },
             background: { color: { value: "transparent" } },
