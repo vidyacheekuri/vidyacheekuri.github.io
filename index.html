@@ -543,17 +543,18 @@
                         <p class="date">Nov 2024 – Present</p>
                         <ul>
                             <li>Built an ensemble of Random Forest, XGBoost, and SVR models to forecast concrete strength, corrosion risk, and leaching behavior. Lab-based testing for these properties is slow and expensive; this pipeline cuts cycle time in half while maintaining strong predictive power, so researchers can iterate faster on sustainable mix designs.</li>
-                            <li>Designed a containerized safety-monitoring system powered by Vision-Language Models (Qwen 2.5-VL) and PyTorch. It scans construction imagery for OSHA-related hazards — unprotected edges, exposed wiring, missing PPE, unsafe scaffolding — using zero-shot recognition across 40+ risk categories, giving site managers a real-time compliance dashboard.</li>
+                            <li>Designed a containerized safety-monitoring system powered by Vision-Language Models (Qwen 2.5-VL) and PyTorch. It scans construction imagery for OSHA-related hazards (unprotected edges, exposed wiring, missing PPE, unsafe scaffolding) using zero-shot recognition across 40+ risk categories, giving site managers a real-time compliance dashboard.</li>
+                            <li>Built an NSF-supported traffic simulation platform (SUMO + TraCI) for cybersecurity training. Designed pedestrian-actuated and vehicle-actuated signal controllers; modeled the Sioux Falls network for scenarios where attackers manipulate traffic infrastructure.</li>
                         </ul>
                     </div>
                 </div>
                 <div class="timeline-item">
                     <div class="timeline-content">
-                        <h3>AI/ML Research Intern @ <span>Deakin University, Australia</span></h3>
+                        <h3>AI/ML Intern @ <span>Deakin University, Australia</span></h3>
                         <p class="date">Mar 2023 – Jul 2023</p>
                         <ul>
                             <li>Implemented a tourism demand forecasting pipeline combining ARIMA (for trends and seasonality) with LSTM (for nonlinear patterns) on 5+ years of historical data. The model supports capacity planning and resource allocation for tourism operators, with versioned model artifacts for reproducibility.</li>
-                            <li>Built a Flask-backed inference service with SQL storage that serves predictions on demand. The design separates model refresh from API contracts, so newer models can be swapped in without disrupting consumers — enabling iterative deployment and continuous improvement.</li>
+                            <li>Built a Flask-backed inference service with SQL storage that serves predictions on demand. The design separates model refresh from API contracts, so newer models can be swapped in without disrupting consumers, enabling iterative deployment and continuous improvement.</li>
                         </ul>
                     </div>
                 </div>
@@ -578,8 +579,8 @@
                     </div>
                     <div class="card-content">
                         <span class="ongoing-badge">Ongoing</span>
-                        <h3>TechSage — AI Ecosystem Intelligence</h3>
-                        <p>A full-stack system that pulls in AI-related news from labs, frameworks, media, and GitHub, then cleans, clusters, and ranks it. Instead of scrolling dozens of feeds, you get a unified, deduplicated view of what’s worth attention — with an optional RAG chat so you can ask questions in natural language and get answers grounded in recent articles.</p>
+                        <h3>TechSage: AI Ecosystem Intelligence</h3>
+                        <p>A full-stack system that pulls in AI-related news from labs, frameworks, media, and GitHub, then cleans, clusters, and ranks it. Instead of scrolling dozens of feeds, you get a unified, deduplicated view of what’s worth attention, with an optional RAG chat so you can ask questions in natural language and get answers grounded in recent articles.</p>
                         <ul>
                             <li>Sources span four tiers (official labs, framework vendors, tech press, GitHub trending). When the same story appears everywhere, the pipeline keeps the canonical copy and links the rest, using 384-dim embeddings and cosine similarity for semantic dedup.</li>
                             <li>Two-stage classification: BART labels topics (LLMs, Agents, Infrastructure, etc.) and release types (Model Release, Framework Update, etc.); pgvector supports similarity search and personalized retrieval for the RAG chat.</li>
@@ -596,10 +597,10 @@
                     </div>
                     <div class="card-content">
                         <h3>6D Pose Estimation for Robotic Grasping</h3>
-                        <p>A deep learning pipeline that predicts 6D object pose — 3D position plus 3D orientation — from a single RGB image, mimicking warehouse-style bin picking where a robot must identify and grasp items from clutter. The system uses transfer learning: a frozen ResNet50 backbone feeds into a custom regression head that outputs translation (x,y,z) and a 6D rotation representation (more stable than quaternions for training).</p>
+                        <p>A deep learning pipeline that predicts 6D object pose (3D position plus 3D orientation) from a single RGB image, mimicking warehouse-style bin picking where a robot must identify and grasp items from clutter. The system uses transfer learning: a frozen ResNet50 backbone feeds into a custom regression head that outputs translation (x,y,z) and a 6D rotation representation (more stable than quaternions for training).</p>
                         <ul>
                             <li>Trained on the YCB-Video dataset; the PoseNet-style model achieves sub-millimeter translation error and learns rotation in a continuous 6D space before converting to rotation matrices for evaluation. The architecture is modular and suitable for integration into robotic workflows.</li>
-                            <li>End-to-end script-based workflow: data ingestion, dataset splitting, training, evaluation, and packaging. Addressed real-world hurdles — Open3D/PyTorch conflicts on macOS, broken dataset mirrors, Git LFS for large model files — resulting in a reproducible Conda environment and clear MLOps practices.</li>
+                            <li>End-to-end script-based workflow: data ingestion, dataset splitting, training, evaluation, and packaging. Addressed real-world hurdles (Open3D/PyTorch conflicts on macOS, broken dataset mirrors, Git LFS for large model files), resulting in a reproducible Conda environment and clear MLOps practices.</li>
                         </ul>
                     </div>
                     <div class="tech-stack">
@@ -612,7 +613,7 @@
                     </div>
                     <div class="card-content">
                         <h3>Video Action Recognition</h3>
-                        <p>A PyTorch-based system that classifies human actions in video clips across 101 categories (UCF101): from sports and instruments to everyday activities. The repo supports two backbones — CNN+LSTM (2D CNN per frame, LSTM over time) and R3D-18 (3D ResNet) — with a Flask web UI for drag-and-drop prediction and a full training pipeline.</p>
+                        <p>A PyTorch-based system that classifies human actions in video clips across 101 categories (UCF101): from sports and instruments to everyday activities. The repo supports two backbones: CNN+LSTM (2D CNN per frame, LSTM over time) and R3D-18 (3D ResNet), with a Flask web UI for drag-and-drop prediction and a full training pipeline.</p>
                         <ul>
                             <li>The CNN+LSTM variant extracts spatial features per frame and models temporal dynamics with an LSTM; R3D-18 uses 3D convolutions to fuse space and time. Both accept configurable frame counts (e.g., 16 or 32) and frame sizes for tradeoffs between accuracy and speed.</li>
                             <li>Includes data loaders, augmentation, label encoding, checkpointing, and experiment tracking. The Flask app serves real-time predictions so you can upload a video and see the predicted action instantly. Built for extensibility: adding new architectures or datasets follows a clear pattern.</li>
@@ -628,7 +629,7 @@
                     </div>
                     <div class="card-content">
                         <h3>Generative Storytelling with AI</h3>
-                        <p>An automated pipeline that turns a single text prompt into a narrated video: a Transformer-based LLM (GPT-4o) expands the prompt into a story, an image model (DALL-E 3) renders each sentence as a scene, and a TTS model produces voiceover. MoviePy stitches images, audio, and text overlays into a final video — useful for education, demos, and quick content creation.</p>
+                        <p>An automated pipeline that turns a single text prompt into a narrated video: a Transformer-based LLM (GPT-4o) expands the prompt into a story, an image model (DALL-E 3) renders each sentence as a scene, and a TTS model produces voiceover. MoviePy stitches images, audio, and text overlays into a final video, useful for education, demos, and quick content creation.</p>
                         <ul>
                             <li>The LLM stage uses decoder-style attention to generate coherent multi-sentence narratives; the image stage relies on a GAN-like paradigm for text-to-image synthesis. Each sentence becomes a clip (image + audio + overlay), then clips are concatenated into the final output.</li>
                             <li>Built with Python, FFmpeg, and ImageMagick for media handling. The pipeline is modular: swap models or adjust generation params without rewriting the assembly logic. Includes demo assets and a sample run from a "cat astronaut on a candy planet" prompt.</li>
@@ -646,7 +647,7 @@
                         <h3>Multilingual Intent Classification & Slot Filling</h3>
                         <p>An NLU pipeline for voice assistants and chatbots: given an utterance like "Play jazz by Miles Davis tomorrow at 6 PM," it predicts the intent (play_music) and extracts slots (MUSIC_GENRE=jazz, ARTIST_NAME=Miles Davis, DATE_TIME=tomorrow at 6 PM). Both intent and slot models are built on fine-tuned XLM-RoBERTa; slots use BIO tagging plus a CRF layer to enforce valid span transitions.</p>
                         <ul>
-                            <li>Trained on the MASSIVE dataset (Amazon Science), which provides parallel annotations across 51 languages for 60 intents and 55 slot types. A single model handles all languages — no per-language variants. The Streamlit app runs both models in sequence: type or paste an utterance and see intent (with confidence) plus extracted slots in real time.</li>
+                            <li>Trained on the MASSIVE dataset (Amazon Science), which provides parallel annotations across 51 languages for 60 intents and 55 slot types. A single model handles all languages with no per-language variants. The Streamlit app runs both models in sequence: type or paste an utterance and see intent (with confidence) plus extracted slots in real time.</li>
                             <li>Slot filling uses a token-level classification head with a CRF on top: B-ARTIST, I-ARTIST, O, etc. The CRF avoids invalid transitions (e.g., I-ARTIST before B-ARTIST). Models can be loaded from local checkpoints or Hugging Face Hub; the app works on Streamlit Cloud with lazy model loading.</li>
                         </ul>
                     </div>
@@ -676,7 +677,7 @@
                     </div>
                     <div class="card-content">
                         <h3>Chloride Corrosion Prediction</h3>
-                        <p>Steel reinforcement in concrete can corrode when chlorides (from de-icing salts or seawater) penetrate the cover. This pipeline predicts corrosion risk from mix design, exposure, and environmental factors — informing maintenance schedules, cover depth choices, and coating decisions for bridges, parking decks, and coastal structures.</p>
+                        <p>Steel reinforcement in concrete can corrode when chlorides (from de-icing salts or seawater) penetrate the cover. This pipeline predicts corrosion risk from mix design, exposure, and environmental factors, informing maintenance schedules, cover depth choices, and coating decisions for bridges, parking decks, and coastal structures.</p>
                         <ul>
                             <li>Ensemble of MLP and XGBoost: neural nets capture nonlinearity, gradient boosting adds robustness. Includes data augmentation and feature scaling for noisy real-world datasets. Sensitivity analysis helps identify which inputs drive risk most.</li>
                             <li>Complete workflow from raw data to trained models, with clear artifact organization for reproducibility and integration into durability assessment tools.</li>
@@ -708,7 +709,7 @@
                     </div>
                     <div class="card-content">
                         <h3>Traffic Simulator for Cybersecurity Training</h3>
-                        <p>An NSF-supported traffic simulation platform built with SUMO and TraCI for studying cyber attacks on traffic infrastructure. Simulates vehicles, pedestrians, and traffic lights at intersections — from simple 4-way setups to the real-world Sioux Falls network — with configurable control logic.</p>
+                        <p>An NSF-supported traffic simulation platform built with SUMO and TraCI for studying cyber attacks on traffic infrastructure. Simulates vehicles, pedestrians, and traffic lights at intersections, from simple 4-way setups to the real-world Sioux Falls network, with configurable control logic.</p>
                         <ul>
                             <li>Includes pedestrian-actuated signals: TraCI detects waiting pedestrians and triggers green phases only when needed (after minimum vehicle green). Vehicle-actuated controller extends green when queues are present. Demonstrates how realistic signal logic can be modeled and manipulated for security research.</li>
                             <li>Sioux Falls network: 24 nodes, 76 edges, converted from GraphML. Queue-based adaptive controller and IDM car-following. Shell scripts for quick demos; requires SUMO and SUMO_HOME. Used for cybersecurity training scenarios where attackers target signal timing or sensor data.</li>
@@ -724,7 +725,7 @@
                     </div>
                     <div class="card-content">
                         <h3>21-Element Cement Leaching Prediction</h3>
-                        <p>Predicts elemental leaching from monolithic cement materials under varying pH and time. When concrete is exposed to aggressive environments, trace elements can leach out — relevant for waste encapsulation, dams, and durability. This project forecasts cumulative release (mg/m²) for 20 elements (Al, As, Ba, Ca, Cd, Cr, Cu, Fe, K, Mg, Na, Pb, Si, Zn, etc.) from mix and exposure inputs.</p>
+                        <p>Predicts elemental leaching from monolithic cement materials under varying pH and time. When concrete is exposed to aggressive environments, trace elements can leach out, relevant for waste encapsulation, dams, and durability. This project forecasts cumulative release (mg/m²) for 20 elements (Al, As, Ba, Ca, Cd, Cr, Cu, Fe, K, Mg, Na, Pb, Si, Zn, etc.) from mix and exposure inputs.</p>
                         <ul>
                             <li>XGBoost-dominated ensemble with 25+ engineered features (interactions, polynomial terms, domain-specific metrics). Material-specific logic for problematic elements (Al, Br) with conditional ensemble selection. R² > 0.85, median absolute percentage error &lt; 1%.</li>
                             <li>Flask web app and REST API for predictions; deployed live on Railway. Supports multiple cement types (CEM I–V), form types (Concrete, Mortar, Sewage_Sludge), and statistical measures. Model serialization and config-driven training for reproducibility.</li>
@@ -771,7 +772,7 @@
 
         <section id="contact" class="contact-section" data-aos="fade-up">
             <h2>What's Next?</h2>
-            <p>I'm actively seeking new opportunities and collaborations where I can contribute to innovative, data-driven products.<br> My inbox is always open, whether you have a question or just want to say hi.<br> Feel free to reach out — I'm happy to chat about AI, tech, or anything in between!</p>
+            <p>I'm actively seeking new opportunities and collaborations where I can contribute to innovative, data-driven products.<br> My inbox is always open, whether you have a question or just want to say hi.<br> Feel free to reach out. I'm happy to chat about AI, tech, or anything in between!</p>
             <a href="https://www.linkedin.com/in/sreevidyacheekuri/" class="button">Say Hello</a>
         </section>
     </main>
