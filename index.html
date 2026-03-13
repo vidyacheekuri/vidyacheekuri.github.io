@@ -550,6 +550,17 @@
                 </div>
                 <div class="timeline-item">
                     <div class="timeline-content">
+                        <h3>AI Engineer Intern @ <span>Innovon.ai</span></h3>
+                        <p class="date">Mar 2024 – Jul 2024</p>
+                        <ul>
+                            <li>Incoming insurance emails were often informal and inconsistently formatted, which made manual triage slow and error-prone. I built a classification module that preprocesses raw text and routes emails by intent and urgency, giving claim agents a clearer queue. Processing efficiency improved by about 15%.</li>
+                            <li>EXtracted policy IDs and loss dates from unstructured emails and scanned PDFs. Using regex for pattern matching and PyPDF2/pdfplumber for document parsing, wrote scripts that output structured JSON. Added validation so incorrectly formatted policy numbers are rejected, and flag ambiguous cases for manual review instead of passing bad data downstream. This reduced manual data entry by roughly 80% and kept the pipeline reliable.</li>
+                            <li>To move the models from local development to a testable environment, designed FastAPI endpoints that serve classification and extraction in real time. Chose FastAPI for its async support and performance under load, and defined clear input/output schemas so the team could integrate and validate against live data.</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-content">
                         <h3>AI/ML Intern @ <span>Deakin University, Australia</span></h3>
                         <p class="date">Mar 2023 – Jul 2023</p>
                         <ul>
